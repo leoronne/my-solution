@@ -18,6 +18,16 @@ markdown. Our goal is to build something akin to [this](https://markdownliveprev
 - When a line starts with `#` and `##` it is rendered in a `h1` and `h2` block respectively.
 - When a line starts with `---` a `hr` element is rendered.
 
+## Solution
+
+I implemented the solution using `react-markdown` which does all the logic realted to the preview of the 
+markdown. I'm also using the `remark-gfm` plugin to add more features that the native library does not supports yet (tables for i.e).
+
+The tests of the application are on the `__tests__` dir and I also added `styled-components` just to do the basics of the styling, which is very simple.
+
+**NOTE:** The newer version of the `react-markdown` has an bug when testing that hasn't been solved yet, you can see the thread [here](https://github.com/facebook/create-react-app/issues/11946#issuecomment-1014699854). To solve this I added the prefix `--maxWorkers=2 --transformIgnorePatterns \"node_modules/(?!react-markdown)/\" --env=jsdom` to the test command, as it 
+states on the linked thread.
+
 ## Guidance
 
 We are using React and you are free to use any CSS solution you like and install small helper
