@@ -25,11 +25,29 @@ export const TextArea = styled.textarea`
 export const Article = styled.article`
   padding: 8px;
   display: flex;
+  flex-direction: column;
+  gap: 8px;
   background-color: #fff;
   overflow-y: auto;
   white-space: normal;
-  display: inline-block;
-  width: 50%;
   vertical-align: top;
-  overflow-y: scroll;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    padding-bottom: 0.1em;
+    padding-top: 0.3em;
+  }
+
+  ul,
+  ol {
+    list-style: none;
+  }
+
+  table > thead > tr > th {
+    text-align: left;
+  }
 `;
