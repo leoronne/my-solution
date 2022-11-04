@@ -1,8 +1,12 @@
+import { Home } from './Pages/Home';
+import GlobalStyles from './styles/GlobalStyles';
+
 function App() {
   return (
-    <div>
-      <textarea onChange={(e) => console.log(e.target.value)} rows={5} />
-    </div>
+    <>
+      <GlobalStyles />
+      <Home />
+    </>
   );
 }
 
