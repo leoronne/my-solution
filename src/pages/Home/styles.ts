@@ -1,5 +1,22 @@
 import styled from 'styled-components';
 
+export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow-y: hidden;
+`;
+
+export const InfoContainer = styled.div`
+  display: flex;
+  padding: 16px;
+  background-color: #dbdbdb;
+
+  > * {
+    flex: 1;
+  }
+`;
+
 export const Main = styled.main`
   height: 100%;
   display: flex;
@@ -32,6 +49,11 @@ export const Article = styled.article`
   white-space: normal;
   vertical-align: top;
 
+  h1 {
+    font-size: 1.7rem;
+    font-weight: 800;
+  }
+
   h1,
   h2,
   h3,
@@ -50,4 +72,33 @@ export const Article = styled.article`
   table > thead > tr > th {
     text-align: left;
   }
+
+  blockquote {
+    padding: 0 1em;
+    color: #6a737d;
+    border-left: 0.25em solid #dfe2e5;
+  }
+
+  p {
+    white-space: pre-wrap;
+  }
+`;
+
+export const Checkbox = styled.input`
+  cursor: pointer;
+
+  &[type='checkbox'] {
+    border-radius: 4px;
+  }
+`;
+
+export const Note = styled.p`
+  font-size: 0.8rem;
+`;
+
+export const FieldSet = styled.fieldset`
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 `;

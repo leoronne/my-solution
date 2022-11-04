@@ -20,8 +20,7 @@ markdown. Our goal is to build something akin to [this](https://markdownliveprev
 
 ## Solution
 
-I implemented the solution using `react-markdown` which does all the logic realted to the preview of the 
-markdown. I'm also using the `remark-gfm` plugin to add more features that the native library does not supports yet (tables for i.e).
+I implemented two solutions, one using a manula implementation with the basics of the acceptance criterias and another using `react-markdown`, which has more features. Keep in mind to always add an empty line to render a proper paragraph block when using the manual implementation.
 
 The tests of the application are on the `__tests__` dir and I also added `styled-components` just to do the basics of the styling, which is very simple.
 

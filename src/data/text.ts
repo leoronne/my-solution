@@ -1,17 +1,20 @@
 export const text = `# Markdown syntax guide
 
-___
+---
 
 ## Headers
 
 # This is a Heading h1
 ## This is a Heading h2 
 
-## Emphasis
+## Blocks
 
-*This text will be italic*  
-_This will also be italic_
+This is an empty block
+This is part of the same block
 
-**This text will be bold**  
-__This will also be bold__
+This is a separated block
+
+## Blockquotes
+
+> Markdown is a lightweight markup language with plain-text-formatting syntax, created in 2004 by John Gruber with Aaron Swartz.
 `;

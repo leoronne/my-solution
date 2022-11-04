@@ -1,5 +1,5 @@
 /* eslint-disable testing-library/no-node-access */
-import { fireEvent, render, screen } from '@testing-library/react';
+import { fireEvent, render, screen, within } from '@testing-library/react';
 import { text } from '../../../data/text';
 
 import { Home } from '../../../pages/Home';
@@ -52,15 +52,13 @@ describe('Home', () => {
     /* 
       Paragraphs
     */
-    const firstParagraphLine1 = screen.getByText('This text will be italic');
-    const firstParagraphLine2 = screen.getByText('This will also be italic');
+    const article = screen.getByRole('article');
+    const firstParagraphLine = within(article).getByText(
+      /this is an empty block this is part of the same block/i,
+    );
+    const secondParagraphLine1 = within(article).getByText(/this is a separated block/i);
 
-    // Should belong to the same parentNode
-    expect(firstParagraphLine1?.parentNode === firstParagraphLine2?.parentNode).toBeTruthy();
-
-    // Should NOT belong to the same parentNode
-    const secondParagraphLine1 = screen.getByText('This text will be bold');
-    expect(firstParagraphLine1?.parentNode === secondParagraphLine1?.parentNode).not.toBeTruthy();
-    expect(firstParagraphLine2?.parentNode === secondParagraphLine1?.parentNode).not.toBeTruthy();
+    // Should NOT be the same node
+    expect(firstParagraphLine?.isSameNode(secondParagraphLine1)).toBe(false);
   });
 });
