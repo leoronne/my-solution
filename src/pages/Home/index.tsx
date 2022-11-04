@@ -4,10 +4,9 @@ import gfm from 'remark-gfm';
 
 import { Header } from '../../components/Header';
 import * as Styles from './styles';
-import { text } from '../../data/text';
 
 export function Home() {
-  const [markDownText, setMarkdownText] = useState(text);
+  const [markDownText, setMarkdownText] = useState('');
 
   return (
     <>
